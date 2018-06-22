@@ -1,7 +1,9 @@
 {
   "scripts": {
     "api": "node ratingsAPI.js",
-    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\""
+    "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
+    "eslint": "eslint --quiet \"**/*.{js,jsx}\"",
+    "webpack": "webpack js/ClientApp.jsx public/bundle.js"
   },
   "dependencies": {
     "axios": "0.16.1",
