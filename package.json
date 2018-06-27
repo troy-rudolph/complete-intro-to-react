@@ -4,7 +4,13 @@
     "format": "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "eslint": "eslint --quiet \"**/*.{js,jsx}\"",
     "build": "webpack",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "test:cover": "jest --coverage",
+    "test": "jest",
+    "test:canon": "jest -u"
+  },
+  "jest": {
+    "snapshotSerializers": ["jest-serializer-enzyme"]
   },
   "dependencies": {
     "axios": "0.16.1",

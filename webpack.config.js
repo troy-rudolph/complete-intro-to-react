@@ -1,14 +1,16 @@
-const path = require('path')
+const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   context: __dirname,
-  entry: "./js/ClientApp.jsx",
+  entry: './js/ClientApp.jsx',
   devtool: "cheap-eval-source-map",
   output: {
     path: path.join(__dirname, 'public'),
-    filename: "bundle.js",
+    filename: "bundle.js"
   },
   devServer: {
+    hot: true,
     publicPath: '/public/',
     historyApiFallback: true
   },

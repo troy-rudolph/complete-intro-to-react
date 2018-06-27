@@ -1,26 +1,16 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import {HashRouter, Route, Switch } from 'react-router-dom'
-import Landing from './Landing'
-import Search from './Search'
+import App from './App';
 
-function FourOhFour() {
-  return <h1>404</h1>;
+function renderApp() {
+  render(<App />, document.getElementById('app'));
 }
 
-function App() {
-  return (
-    <HashRouter>
-    <div className='app'>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Route path="/search" component={Search} />
-        <Route component={FourOhFour} />
-      </Switch>
-    </div>
-    </HashRouter>
-  );
-};
+renderApp();
 
-render(<App />, document.getElementById('app'));
+if (module.hot) {
+   module.hot.accept('./App', () => {
+     renderApp();
+  });
+}

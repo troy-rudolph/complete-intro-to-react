@@ -17,8 +17,8 @@ const Image = styled.img`
   margin-right: 10px;
 `;
 
-/*<div className="show-card">*/
-/*</div>**/
+/* <div className="show-card"> */
+/* </div>* */
 function ShowCard(props) {
   return <Wrapper>
     <Image alt={`$props.show.title} Show Poster`} src={`/public/img/posters/${props.show.poster}`} />
