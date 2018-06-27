@@ -8,7 +8,7 @@ class Search extends Component {
     super(props);
 
     this.state = {
-      searchTerm: 'debug debug'
+      searchTerm: ''
     };
 
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this);
@@ -26,7 +26,9 @@ class Search extends Component {
           <input type="text" value={this.state.searchTerm} placeholder='Search' onChange={this.handleSearchTermChange} />
         </header>
         <div>
-          {preload.shows.map((show) => <ShowCard key={show.imdbID} show={show} />)}
+          {preload.shows
+            .filter(show => `${show.title} ${show.description}`.toLowerCase().indexOf(this.state.searchTerm.toLowerCase()) >= 0)
+            .map((show) => <ShowCard key={show.imdbID} show={show} />)}
         </div>
       </div>
     );
